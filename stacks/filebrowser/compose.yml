@@ -2,7 +2,7 @@ services:
   filebrowser:
     container_name: filebrowser
     volumes:
-      - /path/to/folders/:/srv # Change me top level folder you want to give it access to
+      - /path/to/folders/:/srv # Change me to the top level folder you want to give it access to
       - ./db/filebrowser.db:/database/filebrowser.db
       - ./settings.json:/config/settings.json
     environment:
