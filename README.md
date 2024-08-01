@@ -6,9 +6,9 @@ A collection of docker compose files to quickly spin up a torrent box.
 cd /opt/
 git clone https://github.com/letshack-org/containerised-torrent-box.git
 ```
-Make sure to edit each compose to align with you personal setup.
+Make sure to edit each compose.yml to align with your personal setup.
 
-Then using a bash script like below to bring them all up:
+Then using a bash script like the below to bring the containers all up - 
 
 ```
 #!/bin/bash
