@@ -3,8 +3,10 @@
 A collection of docker compose files to quickly spin up a torrent box.
 
 ```
-cd /opt/
 git clone https://github.com/letshack-org/containerised-torrent-box.git
+cd containerised-torrent-box
+mv stacks /opt
+
 ```
 Make sure to edit each compose.yml to align with your personal setup.
 
