@@ -8,7 +8,11 @@ cd containerised-torrent-box
 mv stacks /opt
 
 ```
-Make sure to edit each compose.yml to align with your personal setup.
+# NOTE - Make sure to edit each compose.yml environment values to align with your personal setup.
+
+Create the docker network the containers will use:
+
+`docker network create torrent_net`
 
 Then using a bash script like the below to bring the containers all up - 
 
@@ -32,3 +36,15 @@ for stack_dir in /opt/stacks/*/; do
 done
 
 ```
+
+Navigate to the Firefox container in your browser - https://ip-of-machine:3001
+
+Then within the Firefox container we can access the rest of the containers. Bookmark the below:
+
+qBittorrent Client - http://qbittorrent:8080/
+File Browser - http://filebrowser:80/files
+Sonarr - http://sonarr:8989/
+Lidarr - http://lidarr:8686/
+Radarr - http://radarr:7878/
+Prowlarr - http://prowlarr:9696/
+
