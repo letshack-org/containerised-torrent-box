@@ -2,6 +2,8 @@
 
 A collection of docker compose files to quickly spin up a torrent box.
 
+I would recommend the host machine be using a VPN on a seperate network, which is ideally locked down so that only the VPN traffic is allowed out. I would also recommend the machine have access to shared storage mounted in /mnt/SHARE for example which should be referenced in the compose.yml files.
+
 ```
 git clone https://github.com/letshack-org/containerised-torrent-box.git
 cd containerised-torrent-box
