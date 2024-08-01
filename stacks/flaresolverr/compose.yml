@@ -1,0 +1,15 @@
+services:
+  flaresolverr:
+    container_name: flaresolverr
+    ports:
+      - 127.0.0.1:8191:8191
+    environment:
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    networks:
+      - torrent_net
+
+networks:
+  torrent_net:
+    external: true

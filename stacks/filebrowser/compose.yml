@@ -1,0 +1,19 @@
+services:
+  filebrowser:
+    container_name: filebrowser
+    volumes:
+      - /path/to/folders/:/srv # Change me top level folder you want to give it access to
+      - ./db/filebrowser.db:/database/filebrowser.db
+      - ./settings.json:/config/settings.json
+    environment:
+     - PUID=0
+     - PGID=0
+    ports:
+      - 127.0.0.1:8445:80
+    image: filebrowser/filebrowser:s6
+    restart: unless-stopped
+    networks:
+      - torrent_net
+networks:
+  torrent_net:
+    external: true

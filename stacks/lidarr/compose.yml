@@ -1,0 +1,22 @@
+---
+services:
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Australia/Sydney # Change me
+    volumes:
+      - ./config:/config
+      - ./Lidarr/music/:/music # Change me
+      - ./Lidarr/downloads:/downloads # Change me
+    ports:
+      - 127.0.0.1:8686:8686
+    restart: unless-stopped
+    networks:
+      - torrent_net
+
+networks:
+  torrent_net:
+    external: true

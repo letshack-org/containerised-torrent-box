@@ -1,0 +1,22 @@
+---
+services:
+  sonarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    ports:
+      - 127.0.0.1:7878:7878
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Australia/Sydney # Change me
+    volumes:
+      - ./config:/config
+      - ./movies/:/movies # Change me
+      - ./downloads:/downloads # Change me
+    restart: unless-stopped
+    networks:
+      - torrent_net
+
+networks:
+  torrent_net:
+    external: true

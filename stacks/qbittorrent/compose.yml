@@ -1,0 +1,26 @@
+---
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Australia/Sydney # Change me
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881 # Can be changed
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads # change me
+      - /path/to/more:/data # Optional
+    ports:
+      - 127.0.0.1:8080:8080
+      - 6881:6881 # Can be changed
+      - 6881:6881/udp # Can be changed
+    restart: unless-stopped
+    networks:
+      - torrent_net
+
+networks:
+  torrent_net:
+    external: true
